@@ -1,8 +1,9 @@
-import { createPost } from "./posts";
+import { createPost, getPosts } from "./posts";
 
 const controller = {
   posts: {
     createPost,
+    getPosts,
   },
 };
 

@@ -20,7 +20,7 @@ const createPost = async (req: Request, res: Response) => {
 
   try {
     const post = db.collection("posts").doc();
-    const postObj = {
+    const data = {
       id: post.id,
       title,
       description,
@@ -32,12 +32,12 @@ const createPost = async (req: Request, res: Response) => {
       postedBy,
     };
 
-    post.set(postObj);
+    post.set(data);
 
     res.status(200).send({
       status: "success",
       message: "posted created successfully",
-      data: postObj,
+      data: data,
     });
   } catch (err) {
     res.status(500).json(err);
