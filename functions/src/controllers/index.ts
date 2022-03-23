@@ -1,9 +1,11 @@
-import { createPost, getPosts } from "./posts";
+import { createPost, getPosts, updatePost, deletePost } from "./posts";
 
 const controller = {
   posts: {
     createPost,
     getPosts,
+    updatePost,
+    deletePost,
   },
 };
 
