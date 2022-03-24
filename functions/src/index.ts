@@ -11,6 +11,9 @@ app.post("/users", controller.users.createUser);
 app.get("/users", controller.users.getUsers);
 app.get("/users/:uid", controller.users.getUserByUid);
 
+// patients
+app.post("/patients", controller.patients.createPatient);
+
 // posts
 app.get("/posts", controller.posts.getPosts);
 app.post("/posts", controller.posts.createPost);
