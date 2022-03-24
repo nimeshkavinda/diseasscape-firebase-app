@@ -4,6 +4,7 @@ import { db } from "../../../firebase.config";
 type User = {
   uid: string;
   fullName: string;
+  profilePhoto: string;
   bio: string;
   status: string;
   disease: string;

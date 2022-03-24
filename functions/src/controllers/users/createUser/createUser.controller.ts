@@ -4,6 +4,7 @@ import { db } from "../../../firebase.config";
 type User = {
   uid: string;
   fullName: string;
+  profilePhoto: string;
   bio: string;
   status: string;
   disease: string;
@@ -20,6 +21,7 @@ const createUser = async (req: Request, res: Response) => {
   const {
     uid,
     fullName,
+    profilePhoto,
     bio,
     status,
     disease,
@@ -35,6 +37,7 @@ const createUser = async (req: Request, res: Response) => {
     const data = {
       uid,
       fullName,
+      profilePhoto,
       bio,
       status,
       disease,
