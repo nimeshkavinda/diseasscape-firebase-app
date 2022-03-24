@@ -21,4 +21,7 @@ app.post("/posts", controller.posts.createPost);
 app.patch("/posts/:id", controller.posts.updatePost);
 app.delete("/posts/:id", controller.posts.deletePost);
 
+// events
+app.post("/events", controller.events.createEvent);
+
 exports.app = functions.https.onRequest(app);
