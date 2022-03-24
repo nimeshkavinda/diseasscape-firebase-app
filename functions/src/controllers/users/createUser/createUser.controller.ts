@@ -33,7 +33,7 @@ const createUser = async (req: Request, res: Response) => {
   } = req.body;
 
   try {
-    const post = db.collection("users").doc(uid);
+    const user = db.collection("users").doc(uid);
     const data = {
       uid,
       fullName,
@@ -48,7 +48,7 @@ const createUser = async (req: Request, res: Response) => {
       going,
     };
 
-    post.set(data);
+    user.set(data);
 
     res.status(200).send({
       status: "success",

@@ -16,7 +16,7 @@ const createPatient = async (req: Request, res: Response) => {
   const { uid, date, status, disease, location, latLng } = req.body;
 
   try {
-    const post = db.collection("patients").doc(uid);
+    const patient = db.collection("patients").doc(uid);
     const data = {
       uid,
       date,
@@ -26,7 +26,7 @@ const createPatient = async (req: Request, res: Response) => {
       latLng,
     };
 
-    post.set(data);
+    patient.set(data);
 
     res.status(200).send({
       status: "success",

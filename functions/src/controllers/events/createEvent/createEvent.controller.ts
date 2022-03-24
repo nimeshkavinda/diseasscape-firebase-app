@@ -27,9 +27,9 @@ const createEvent = async (req: Request, res: Response) => {
   } = req.body;
 
   try {
-    const post = db.collection("events").doc();
+    const event = db.collection("events").doc();
     const data = {
-      id: post.id,
+      id: event.id,
       title,
       description,
       date,
@@ -40,7 +40,7 @@ const createEvent = async (req: Request, res: Response) => {
       participants,
     };
 
-    post.set(data);
+    event.set(data);
 
     res.status(200).send({
       status: "success",
