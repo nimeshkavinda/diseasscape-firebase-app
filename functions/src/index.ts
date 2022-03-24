@@ -13,6 +13,7 @@ app.get("/users/:uid", controller.users.getUserByUid);
 
 // patients
 app.post("/patients", controller.patients.createPatient);
+app.get("/patients", controller.patients.getPatients);
 
 // posts
 app.get("/posts", controller.posts.getPosts);
