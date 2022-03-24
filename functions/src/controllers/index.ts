@@ -1,8 +1,8 @@
-import { createUser, getUserByUid } from "./users";
+import { createUser, getUserByUid, getUsers } from "./users";
 import { createPost, getPosts, updatePost, deletePost } from "./posts";
 
 const controller = {
-  users: { createUser, getUserByUid },
+  users: { createUser, getUserByUid, getUsers },
   posts: {
     createPost,
     getPosts,

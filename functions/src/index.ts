@@ -8,6 +8,7 @@ app.get("/", (req, res) => res.status(200).send("Hello world"));
 
 // users
 app.post("/users", controller.users.createUser);
+app.get("/users", controller.users.getUsers);
 app.get("/users/:uid", controller.users.getUserByUid);
 
 // posts
