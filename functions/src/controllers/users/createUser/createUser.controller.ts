@@ -31,7 +31,7 @@ const createUser = async (req: Request, res: Response) => {
   } = req.body;
 
   try {
-    const post = db.collection("users").doc();
+    const post = db.collection("users").doc(uid);
     const data = {
       uid,
       fullName,
