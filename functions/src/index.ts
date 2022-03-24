@@ -6,6 +6,9 @@ const app = express();
 
 app.get("/", (req, res) => res.status(200).send("Hello world"));
 
+// users
+app.post("/users", controller.users.createUser);
+
 // posts
 app.get("/posts", controller.posts.getPosts);
 app.post("/posts", controller.posts.createPost);
