@@ -1,7 +1,7 @@
 import { createUser, getUserByUid, getUsers } from "./users";
 import { createPost, getPosts, updatePost, deletePost } from "./posts";
 import { createPatient, getPatients } from "./patients";
-import { createEvent } from "./events";
+import { createEvent, getEvents } from "./events";
 
 const controller = {
   users: { createUser, getUserByUid, getUsers },
@@ -12,7 +12,7 @@ const controller = {
     updatePost,
     deletePost,
   },
-  events: { createEvent },
+  events: { createEvent, getEvents },
 };
 
 export default controller;

@@ -23,5 +23,6 @@ app.delete("/posts/:id", controller.posts.deletePost);
 
 // events
 app.post("/events", controller.events.createEvent);
+app.get("/events", controller.events.getEvents);
 
 exports.app = functions.https.onRequest(app);
