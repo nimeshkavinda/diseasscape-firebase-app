@@ -1,5 +1,5 @@
 import { Response } from "express";
-import { db } from "../../../firebase.config";
+import { admin, db } from "../../../firebase.config";
 
 type User = {
   uid: string;
@@ -46,6 +46,7 @@ const createUser = async (req: Request, res: Response) => {
       posts,
       events,
       going,
+      created: admin.firestore.FieldValue.serverTimestamp(),
     };
 
     user.set(data);
