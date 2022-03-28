@@ -10,6 +10,7 @@ app.get("/", (req, res) => res.status(200).send("Hello world"));
 app.post("/users", controller.users.createUser);
 app.get("/users", controller.users.getUsers);
 app.get("/users/:uid", controller.users.getUserByUid);
+app.patch("/users/:uid", controller.users.updateUser);
 
 // patients
 app.post("/patients", controller.patients.createPatient);
