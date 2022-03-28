@@ -40,6 +40,7 @@ const updateUser = async (req: Request, res: Response) => {
     const currentData = (await user.get()).data() || {};
 
     const data = {
+      uid: uid || currentData.uid,
       fullName: fullName || currentData.fullName,
       profilePhoto: profilePhoto || currentData.profilePhoto,
       bio: bio || currentData.bio,
