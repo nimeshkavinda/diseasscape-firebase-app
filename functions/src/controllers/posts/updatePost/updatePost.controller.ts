@@ -35,7 +35,7 @@ const updatePost = async (req: Request, res: Response) => {
     const currentData = (await post.get()).data() || {};
 
     const data = {
-      id: id || currentData.id,
+      id: currentData.id,
       title: title || currentData.title,
       description: description || currentData.description,
       type: type || currentData.type,
