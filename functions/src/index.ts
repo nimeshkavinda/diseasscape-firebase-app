@@ -15,6 +15,7 @@ app.patch("/users/:uid", controller.users.updateUser);
 // patients
 app.patch("/patients/:uid", controller.patients.createPatient);
 app.get("/patients", controller.patients.getPatients);
+app.delete("/patients/:uid", controller.patients.deletePatient);
 
 // posts
 app.get("/posts", controller.posts.getPosts);

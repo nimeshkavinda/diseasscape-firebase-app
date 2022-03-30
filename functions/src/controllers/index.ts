@@ -1,11 +1,11 @@
 import { createUser, getUserByUid, getUsers, updateUser } from "./users";
 import { createPost, getPosts, updatePost, deletePost } from "./posts";
-import { createPatient, getPatients } from "./patients";
+import { createPatient, getPatients, deletePatient } from "./patients";
 import { createEvent, getEvents } from "./events";
 
 const controller = {
   users: { createUser, getUserByUid, getUsers, updateUser },
-  patients: { createPatient, getPatients },
+  patients: { createPatient, getPatients, deletePatient },
   posts: {
     createPost,
     getPosts,
