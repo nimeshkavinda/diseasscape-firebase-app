@@ -13,7 +13,7 @@ app.get("/users/:uid", controller.users.getUserByUid);
 app.patch("/users/:uid", controller.users.updateUser);
 
 // patients
-app.post("/patients", controller.patients.createPatient);
+app.patch("/patients/:uid", controller.patients.createPatient);
 app.get("/patients", controller.patients.getPatients);
 
 // posts

@@ -13,28 +13,33 @@ type Patient = {
 type Request = { body: Patient; params: { uid: string } };
 
 const createPatient = async (req: Request, res: Response) => {
-  const { uid, date, status, disease, location, latLng } = req.body;
+  const {
+    body: { date, status, disease, location, latLng },
+    params: { uid },
+  } = req;
 
   try {
     const patient = db.collection("patients").doc(uid);
+
+    const currentData = (await patient.get()).data() || {};
+
     const data = {
-      uid,
-      date,
-      status,
-      disease,
-      location,
-      latLng,
+      uid: uid || currentData.uid,
+      date: date,
+      status: status,
+      disease: disease,
+      location: location,
+      latLng: latLng,
     };
 
-    patient.set(data);
-
-    res.status(200).send({
+    await patient.set(data);
+    return res.status(200).json({
       status: "success",
-      message: "patient created successfully",
+      message: "patient created/ updated successfully",
       data: data,
     });
-  } catch (err) {
-    res.status(500).json(err);
+  } catch (error) {
+    return res.status(500).json(error);
   }
 };
 
