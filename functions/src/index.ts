@@ -1,8 +1,10 @@
 import * as functions from "firebase-functions";
 import * as express from "express";
 import controller from "./controllers";
+const cors = require("cors");
 
 const app = express();
+app.use(cors({ origin: true }));
 
 app.get("/", (req, res) => res.status(200).send("Hello world"));
 
